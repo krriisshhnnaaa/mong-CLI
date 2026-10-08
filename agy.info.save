@@ -1,0 +1,43 @@
+╒════╗  ╒═══╗ ╒══════════╗ ╒══════╗ ╒═════════╗ ╒════╗╒════╗  ╒════╗   ╒════╗  ╒════════╗   ╒════╗   ╒════╗ ╒════════╗      ╒═════════╗  ╒═════════╗ ╒════╗    ╒════╗     
+└┐  ╓╜ ╒╛ ╓─╜ └┐  ╓───┐  ║ └─┐  ╓─╜ │  ╓────┐ ║ └┐  ╓╜└┐  ╓╜  │    ╚╗  └┐  ╓╜  │  ╓──┐  ║   │    ╚╗  └┐  ╓╜ │  ╓───┐ ║      └┐  ╓───┐ ╚╗ └┐  ╓───┐ ║ └┐  ╓╜    └┐  ╓╜     
+ │  ║ ╒╛ ╓╜    │  ║   │  ║   │  ║   │  ║    └─╜  │  ║  │  ║   │  ╟┐ ╚╗  │  ║   │  ║  │  ║   │  ╟┐ ╚╗  │  ║  │  ║   └─╜       │  ║   │  ║  │  ║   └─╜  └┐ ╚╗    ╒╛ ╓╜      
+ │  ╚═╛  ╚═╗   │  ╚═══╛  ║   │  ║   │  ╚══════╗  │  ╚══╛  ║   │  ║└┐ ╚╗ │  ║   │  ╚══╛  ║   │  ║└┐ ╚╗ │  ║  │  ║             │  ║   │  ║  │  ╚══╗      └┐ ╚╗  ╒╛ ╓╜       
+ │  ╓───┐  ║   │  ╓┐  ╓──╜   │  ║   └──────┐  ║  │  ╓──┐  ║   │  ║ └┐ ╚╗│  ║   │  ╓──┐  ║   │  ║ └┐ ╚╗│  ║  │  ║ ╒════╗      │  ║   │  ║  │  ╓──╜       └┐ ╚╗╒╛ ╓╜        
+ │  ║   │  ║   │  ║└┐ ╚╗     │  ║   ╒═╗    │  ║  │  ║  │  ║   │  ║  └┐ ╚╡  ║   │  ║  │  ║   │  ║  └┐ ╚╡  ║  │  ║ └┐  ╓╜      │  ║   │  ║  │  ║   ╒═╗     └┐ ╚╛ ╓╜         
+╒╛  ╚╗ ╒╛  ╚╗ ╒╛  ╚╗└┐ ╚═╗ ╒═╛  ╚═╗ │ ╚════╛  ║ ╒╛  ╚╗╒╛  ╚╗ ╒╛  ╚╗  └┐    ║  ╒╛  ╚╗╒╛  ╚╗ ╒╛  ╚╗  └┐    ║  │  ╚══╛  ║  ╒═╗ ╒╛  ╚═══╛ ╓╜ ╒╛  ╚═══╛ ║      └┐  ╓╜          
+└────╜ └────╜ └────╜ └───╜ └──────╜ └─────────╜ └────╜└────╜ └────╜   └────╜  └────╜└────╜ └────╜   └────╜  └────────╜  └─╜ └─────────╜  └─────────╜       └──╜           
+
+
+
+
+
+
+
+
+
+above is the txt also available in file logo.txt inside the repo
+
+make a CLI with following functions :
+
+display name
+display available commands
+make mongodb dbs
+modify files inside mongodb dbs 
+
+CLI cmd : 
+blogwriter -o (open and show the text once + show commands)
+blogwriter -h (show only available commands)
+blogwriter -in <dbs> create <file_name> (create a markdown file with name <file_name>)
+blogwriter -make <dbs_name> (make a new mongoDB database using mongosh)
+blogwriter -in <dbs_name> open <file_name> (open the file <file_name> from dbs <dbs_name> in nano)
+blogwriter -connect <dbs_name> to <repository_name> (move dbs to the repository <reposiotry_name>)
+
+
+cli name : blogwriter
+
+
+
+action to do now : make blogwriter -h command + blogwriter make <dbs_name> command
+mongosh is installed in the terminal.
+do not make other commands yet
+

@@ -1,0 +1,48 @@
+╒════╗  ╒═══╗ ╒══════════╗ ╒══════╗ ╒═════════╗ ╒════╗╒════╗  ╒════╗   ╒════╗  ╒════════╗   ╒════╗   ╒════╗ ╒════════╗      ╒═════════╗  ╒═════════╗ ╒════╗    ╒════╗     
+└┐  ╓╜ ╒╛ ╓─╜ └┐  ╓───┐  ║ └─┐  ╓─╜ │  ╓────┐ ║ └┐  ╓╜└┐  ╓╜  │    ╚╗  └┐  ╓╜  │  ╓──┐  ║   │    ╚╗  └┐  ╓╜ │  ╓───┐ ║      └┐  ╓───┐ ╚╗ └┐  ╓───┐ ║ └┐  ╓╜    └┐  ╓╜     
+ │  ║ ╒╛ ╓╜    │  ║   │  ║   │  ║   │  ║    └─╜  │  ║  │  ║   │  ╟┐ ╚╗  │  ║   │  ║  │  ║   │  ╟┐ ╚╗  │  ║  │  ║   └─╜       │  ║   │  ║  │  ║   └─╜  └┐ ╚╗    ╒╛ ╓╜      
+ │  ╚═╛  ╚═╗   │  ╚═══╛  ║   │  ║   │  ╚══════╗  │  ╚══╛  ║   │  ║└┐ ╚╗ │  ║   │  ╚══╛  ║   │  ║└┐ ╚╗ │  ║  │  ║             │  ║   │  ║  │  ╚══╗      └┐ ╚╗  ╒╛ ╓╜       
+ │  ╓───┐  ║   │  ╓┐  ╓──╜   │  ║   └──────┐  ║  │  ╓──┐  ║   │  ║ └┐ ╚╗│  ║   │  ╓──┐  ║   │  ║ └┐ ╚╗│  ║  │  ║ ╒════╗      │  ║   │  ║  │  ╓──╜       └┐ ╚╗╒╛ ╓╜        
+ │  ║   │  ║   │  ║└┐ ╚╗     │  ║   ╒═╗    │  ║  │  ║  │  ║   │  ║  └┐ ╚╡  ║   │  ║  │  ║   │  ║  └┐ ╚╡  ║  │  ║ └┐  ╓╜      │  ║   │  ║  │  ║   ╒═╗     └┐ ╚╛ ╓╜         
+╒╛  ╚╗ ╒╛  ╚╗ ╒╛  ╚╗└┐ ╚═╗ ╒═╛  ╚═╗ │ ╚════╛  ║ ╒╛  ╚╗╒╛  ╚╗ ╒╛  ╚╗  └┐    ║  ╒╛  ╚╗╒╛  ╚╗ ╒╛  ╚╗  └┐    ║  │  ╚══╛  ║  ╒═╗ ╒╛  ╚═══╛ ╓╜ ╒╛  ╚═══╛ ║      └┐  ╓╜          
+└────╜ └────╜ └────╜ └───╜ └──────╜ └─────────╜ └────╜└────╜ └────╜   └────╜  └────╜└────╜ └────╜   └────╜  └────────╜  └─╜ └─────────╜  └─────────╜       └──╜           
+
+
+
+
+
+
+
+
+
+above is the txt also available in file logo.txt inside the repo
+
+make a CLI with following functions :
+
+display name
+display available commands
+make mongodb dbs
+modify files inside mongodb dbs 
+
+CLI cmd : 
+blogwriter -o (open and show the text once + show commands)
+blogwriter -h (show only available commands)
+blogwriter -in <dbs> create <file_name> (create a markdown file with name <file_name>)
+blogwriter -make <dbs_name> (make a new mongoDB database using mongosh)
+blogwriter -in <dbs_name> open <file_name> (open the file <file_name> from dbs <dbs_name> in nano)
+blogwriter -connect <dbs_name> to <repository_name> (move dbs to the repository <reposiotry_name>)
+blogwriter - show <file_name> from <dbs_name> (shows file <file_name> from the dbs <dbs_name>)
+blogwriter - check <dbs_name> (verifies <dbs_name> exists)
+blogwriet - set admin <admin_name> pass <admin_pass> for <dbs_name> (sets admin credentials for a dbs <dbs_name>)
+
+cli name : blogwriter
+
+
+action to do now : 
+
+make check dbs_name command inside mongosh_cmd directory with filename : check_dbs.cpp 
+any external header material needed must go to a seperate header file named : checkDBS.h 
+make set admin command inside the same directory file name = setadmin.cpp ; header = setadmin.h
+update cli-main.md and cli_main.cpp as needed
+
+
