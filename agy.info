@@ -1,3 +1,12 @@
+in this document : 
+execute action now()
+ignore action done ()
+
+rest : 
+context : 
+
+
+
 ╒════╗  ╒═══╗ ╒══════════╗ ╒══════╗ ╒═════════╗ ╒════╗╒════╗  ╒════╗   ╒════╗  ╒════════╗   ╒════╗   ╒════╗ ╒════════╗      ╒═════════╗  ╒═════════╗ ╒════╗    ╒════╗     
 └┐  ╓╜ ╒╛ ╓─╜ └┐  ╓───┐  ║ └─┐  ╓─╜ │  ╓────┐ ║ └┐  ╓╜└┐  ╓╜  │    ╚╗  └┐  ╓╜  │  ╓──┐  ║   │    ╚╗  └┐  ╓╜ │  ╓───┐ ║      └┐  ╓───┐ ╚╗ └┐  ╓───┐ ║ └┐  ╓╜    └┐  ╓╜     
  │  ║ ╒╛ ╓╜    │  ║   │  ║   │  ║   │  ║    └─╜  │  ║  │  ║   │  ╟┐ ╚╗  │  ║   │  ║  │  ║   │  ╟┐ ╚╗  │  ║  │  ║   └─╜       │  ║   │  ║  │  ║   └─╜  └┐ ╚╗    ╒╛ ╓╜      
@@ -38,7 +47,7 @@ blogwriet - set admin <admin_name> pass <admin_pass> for <dbs_name> (sets admin 
 cli name : blogwriter
 
 
-action to do now : 
+action done : 
 
 make check dbs_name command inside mongosh_cmd directory with filename : check_dbs.cpp 
 any external header material needed must go to a seperate header file named : checkDBS.h 
@@ -46,3 +55,28 @@ make set admin command inside the same directory file name = setadmin.cpp ; head
 update cli-main.md and cli_main.cpp as needed
 
 
+action to do now ( 
+
+
+
+make blogwriter -in <dbs_name> crearte <file_name>
+
+instructions : 
+
+upon command : 
+
+search for <dbs_name> 
+
+if <dbs_name> exists :
+	echo {database found}
+	
+	in <dbs_name> :
+		if <file_name> exists :
+			echo {already exists}
+		else :
+			create mongosh file <file_name> 
+else :
+echo {database not found}
+
+break
+)

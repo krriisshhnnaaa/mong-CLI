@@ -64,6 +64,7 @@ void printCommands() {
 #include "mongosh_cmd/makeDBS.h"
 #include "mongosh_cmd/checkDBS.h"
 #include "mongosh_cmd/setadmin.h"
+#include "mongosh_cmd/create_file.h"
 
 namespace {
 bool parseAdminArgs(int startIdx, int argc, char* argv[], std::string& adminName, std::string& adminPass, std::string& dbsName) {
@@ -149,6 +150,33 @@ int main(int argc, char* argv[]) {
         } else if (subCmd == "show") {
             std::cout << "Command 'blogwriter - show' is not yet implemented.\n";
             return 1;
+        } else if (subCmd == "in") {
+            if (argc < 4) {
+                std::cerr << "Error: Missing database name.\n";
+                std::cerr << "Usage: blogwriter - in <dbs_name> create <file_name>\n";
+                return 1;
+            }
+            std::string dbsName = argv[3];
+            if (argc < 5) {
+                std::cerr << "Error: Missing action.\n";
+                std::cerr << "Usage: blogwriter - in <dbs_name> create <file_name>\n";
+                return 1;
+            }
+            std::string action = argv[4];
+            if (action == "create" || action == "crearte") {
+                if (argc < 6) {
+                    std::cerr << "Error: Missing file name.\n";
+                    std::cerr << "Usage: blogwriter - in <dbs_name> create <file_name>\n";
+                    return 1;
+                }
+                return createFile(dbsName, argv[5]);
+            } else if (action == "open") {
+                std::cout << "Command 'blogwriter -in <dbs_name> open <file_name>' is not yet implemented.\n";
+                return 1;
+            } else {
+                std::cerr << "Unknown action '" << action << "' for database '" << dbsName << "'.\n";
+                return 1;
+            }
         }
     }
 
@@ -171,9 +199,33 @@ int main(int argc, char* argv[]) {
         return setAdmin(adminName, adminPass, dbsName);
     }
 
-    if (cmd == "-in" || cmd == "in") {
-        std::cout << "Command 'blogwriter -in' is not yet implemented.\n";
-        return 1;
+    if (cmd == "-in" || cmd == "in" || cmd == "--in") {
+        if (argc < 3) {
+            std::cerr << "Error: Missing database name.\n";
+            std::cerr << "Usage: blogwriter -in <dbs_name> create <file_name>\n";
+            return 1;
+        }
+        std::string dbsName = argv[2];
+        if (argc < 4) {
+            std::cerr << "Error: Missing action.\n";
+            std::cerr << "Usage: blogwriter -in <dbs_name> create <file_name>\n";
+            return 1;
+        }
+        std::string action = argv[3];
+        if (action == "create" || action == "crearte") {
+            if (argc < 5) {
+                std::cerr << "Error: Missing file name.\n";
+                std::cerr << "Usage: blogwriter -in <dbs_name> create <file_name>\n";
+                return 1;
+            }
+            return createFile(dbsName, argv[4]);
+        } else if (action == "open") {
+            std::cout << "Command 'blogwriter -in <dbs_name> open <file_name>' is not yet implemented.\n";
+            return 1;
+        } else {
+            std::cerr << "Unknown action '" << action << "' for database '" << dbsName << "'.\n";
+            return 1;
+        }
     }
 
     if (cmd == "-connect" || cmd == "connect") {

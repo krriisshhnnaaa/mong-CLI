@@ -30,7 +30,7 @@ Or when running the local binary:
 | `blogwriter -o` | Open and show the logo text once + show commands | Implemented |
 | `blogwriter -h` | Show only available commands | Implemented |
 | `blogwriter -make <dbs_name>` / `blogwriter make <dbs_name>` | Make a new MongoDB database using `mongosh` | Implemented |
-| `blogwriter -in <dbs> create <file_name>` | Create a markdown file with name `<file_name>` | Planned |
+| `blogwriter -in <dbs> create <file_name>` / `crearte` | Create a file `<file_name>` in database `<dbs>` | Implemented |
 | `blogwriter -in <dbs_name> open <file_name>` | Open the file `<file_name>` from dbs `<dbs_name>` in nano | Planned |
 | `blogwriter -connect <dbs_name> to <repository_name>` | Move dbs to the repository `<repository_name>` | Planned |
 | `blogwriter - show <file_name> from <dbs_name>` | Shows file `<file_name>` from the dbs `<dbs_name>` | Planned |
@@ -77,6 +77,18 @@ Sets the administrator username and password for a database:
 ./blogwriter set admin myadmin pass secretPass123 for my_tech_blog
 ```
 
+### 6. Create File in Database (`-in <dbs> create <file_name>`)
+Creates a new file `<file_name>` inside the database `<dbs_name>` directory:
+```bash
+./blogwriter -in my_tech_blog create my_post.md
+# or (using the crearte alias)
+./blogwriter -in my_tech_blog crearte my_post.md
+```
+- If the database exists: outputs `database found`.
+  - If the file already exists: outputs `already exists`.
+  - If the file does not exist: creates the file inside `mongoDATABASE/<dbs_name>/<file_name>` and registers it in MongoDB if `mongosh` is available.
+- If the database does not exist: outputs `database not found`.
+
 ---
 
 ## Compilation
@@ -84,7 +96,7 @@ Sets the administrator username and password for a database:
 To compile the C++ source code into the executable binary:
 
 ```bash
-g++ -std=c++17 -O2 cli_main.cpp mongosh_cmd/makeDBS.cpp mongosh_cmd/check_dbs.cpp mongosh_cmd/setadmin.cpp -o blogwriter
+g++ -std=c++17 -O2 cli_main.cpp mongosh_cmd/makeDBS.cpp mongosh_cmd/check_dbs.cpp mongosh_cmd/setadmin.cpp mongosh_cmd/create_file.cpp -o blogwriter
 ```
 
 ---
@@ -99,6 +111,8 @@ g++ -std=c++17 -O2 cli_main.cpp mongosh_cmd/makeDBS.cpp mongosh_cmd/check_dbs.cp
   - **`check_dbs.cpp`**: Implementation of `- check <dbs_name>` command.
   - **`setadmin.h`**: Header file for setting admin credentials.
   - **`setadmin.cpp`**: Implementation of `- set admin` command using `mongosh`.
+  - **`create_file.h`**: Header file for creating files inside databases.
+  - **`create_file.cpp`**: Implementation of `-in <dbs> create <file_name>` command.
 - **`logo.txt`**: ASCII art banner representing the BlogWriter title.
 - **`mongoDATABASE/`**: Directory reserved for MongoDB databases / repositories.
 - **`cli-cmd.md`**: Command documentation and usage instructions (also mirrored at `cli-main.md`).
